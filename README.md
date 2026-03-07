@@ -18,12 +18,15 @@ energy data.
 
 ## Repository Structure
 ```
-├── simulation.py          # Main pseudospectral Navier-Stokes solver
-├── analysis.py            # Decay timescale analysis and ANOVA test
-├── plotting.py            # Energy, enstrophy, spectrum, vorticity plots
-├── taylor_green.py        # Taylor-Green vortex validation script
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
+├── simulation.py            # Main pseudospectral Navier-Stokes solver
+├── taylor_green_vortex.py   # Taylor-Green vortex validation script
+├── timescale.py             # Creates bar graph of decay timescale values with error bars
+├── analysis.py              # Calculates the decay timescale
+├── anova.py                 # One-way ANOVA statistical test
+├── plotting.py              # Energy, enstrophy, and spectrum plots
+├── vort_plot.py             # Vorticity snapshot plots
+├── requirements.txt         # Python dependencies
+└── README.md                # This file
 ```
 
 ## Dependencies
@@ -37,31 +40,6 @@ Install with:
 ```bash
 pip install numpy scipy matplotlib
 ```
-
-## How to Run
-
-**1. Run the simulation:**
-```bash
-python simulation.py
-```
-This saves the following `.npy` data files for each forcing duration and run:
-- `energy_{T2}_run{n}.npy`
-- `enstrophy_{T2}_run{n}.npy`
-- `spectra_{T2}_run{n}.npy`
-- `vorticity_{T2}_run{n}.npy`
-- `time_{T2}_run{n}.npy`
-
-**2. Run the analysis:**
-```bash
-python analysis.py
-```
-Outputs decay timescale τ, R² values, and ANOVA results for each forcing duration.
-
-**3. Generate plots:**
-```bash
-python plotting.py
-```
-Saves energy evolution, enstrophy evolution, 3D energy spectrum, vorticity snapshots, decay fit plots, and bar chart with error bars.
 
 ## Key Parameters
 | Parameter | Value | Description |
