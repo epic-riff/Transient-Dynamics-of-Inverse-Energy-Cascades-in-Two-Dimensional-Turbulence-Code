@@ -1,6 +1,6 @@
 # Transient Dynamics of Inverse Energy Cascades in Two-Dimensional Turbulence
 
-**Laksh Patel — MOT Charter High School**  
+**Laksh Patel - MOT Charter High School**  
 **New Castle County Science Fair 2026**
 
 ## Overview
