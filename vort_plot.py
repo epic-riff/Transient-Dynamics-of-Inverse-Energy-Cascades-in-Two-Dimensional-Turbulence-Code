@@ -6,19 +6,19 @@ from matplotlib import cm
 import numpy as np
 
 T2 = 550
-run = 2
+run = 1
 
-N = 256
+N = 512
 L = 2 * np.pi
 x = np.linspace(0, L, N, endpoint=False)
 y = np.linspace(0, L, N, endpoint=False)
 X, Y = np.meshgrid(x, y)
 
-time_array = np.load(f"time_{T2}_run{run}.npy")
-vorticity = np.load(f"vorticity_{T2}_run{run}.npy")
+time_array = np.load(f"time_{T2-50}_run{run}.npy")
+vorticity = np.load(f"vorticity_{T2-50}_run{run}.npy")
 
 # Choose 6-8 specific snapshots by time
-target_times = [0, 50, 200, 350, 550, 700, 850, 1000]
+target_times = range(1000)
 
 for target_t in target_times:
     # Find closest snapshot to target time
@@ -39,21 +39,21 @@ for target_t in target_times:
     print(f"Saved 2D vorticity at t={t:.1f}")
 
     # --- 3D Plot ---
-    fig = plt.figure(figsize=(10, 7))
-    ax = fig.add_subplot(111, projection='3d')
-    ax.plot_surface(X, Y, vort,
-                    cmap='RdBu_r',
-                    antialiased=True,
-                    rstride=4,
-                    cstride=4)
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
-    ax.set_zlabel('Vorticity')
-    ax.set_title(f'Vorticity Field at t={t:.1f}')
-    ax.view_init(30,60)
-    plt.tight_layout()
-    plt.savefig(f'vorticity_3d_t{int(t):04d}.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    print(f"Saved 3D vorticity at t={t:.1f}")
+    # fig = plt.figure(figsize=(10, 7))
+    # ax = fig.add_subplot(111, projection='3d')
+    # ax.plot_surface(X, Y, vort,
+    #                 cmap='RdBu_r',
+    #                 antialiased=True,
+    #                 rstride=4,
+    #                 cstride=4)
+    # ax.set_xlabel('x')
+    # ax.set_ylabel('y')
+    # ax.set_zlabel('Vorticity')
+    # ax.set_title(f'Vorticity Field at t={t:.1f}')
+    # ax.view_init(30,60)
+    # plt.tight_layout()
+    # plt.savefig(f'vorticity_3d_t{int(t):04d}.png', dpi=150, bbox_inches='tight')
+    # plt.close()
+    # print(f"Saved 3D vorticity at t={t:.1f}")
 
 print("All done!")
