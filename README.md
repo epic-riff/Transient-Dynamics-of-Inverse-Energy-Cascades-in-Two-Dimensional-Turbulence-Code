@@ -1,8 +1,5 @@
 # Transient Dynamics of Inverse Energy Cascades in Two-Dimensional Turbulence
 
-**Laksh Patel - MOT Charter High School**  
-**New Castle County Science Fair 2026**
-
 ## Overview
 This project studies how the duration of external forcing affects the decay 
 timescale of a 2D turbulent inverse energy cascade after forcing is removed. 
