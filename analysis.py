@@ -58,8 +58,9 @@ for run in range(1,7):
 
         plt.plot(decay_time_shifted, decay_energy, label='Data')
         plt.plot(decay_time_shifted, exp_decay(decay_time_shifted, *popt_exp), label='Exponential fit')
-        plt.savefig(f"decay_timescale_fit_T{T2}.png")
+        plt.plot(decay_time_shifted, power_decay(decay_time_shifted + 1, *popt_pow), label='Power law fit')        
         plt.legend()
+        plt.savefig(f"decay_timescale_fit_T{T2}.png")
         plt.close()
         
         decays.append(tau)
