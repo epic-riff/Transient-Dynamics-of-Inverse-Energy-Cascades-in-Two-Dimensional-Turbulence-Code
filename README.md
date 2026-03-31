@@ -13,6 +13,8 @@ simulate 2D turbulence under transient forcing. Five forcing durations (100,
 timescale τ was measured by fitting E(t) = Ae^(-t/τ) to the post-forcing 
 energy data.
 
+[Vorticity Evolution Video Example]{https://youtu.be/ZThQgZiqjNY}
+
 ## Repository Structure
 ```
 ├── simulation.py            # Main pseudospectral Navier-Stokes solver
